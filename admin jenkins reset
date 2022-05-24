@@ -1,0 +1,15 @@
+Disable Jenkins Security
+Log onto your Jenkins server using an account with root privileges. Once logged in, look open Jenkin’s configration XML file into a text editor.
+
+In the example below, we are opening the file in VIM.
+
+sudo vi /var/lib/jenkins/config.xml
+With the configuration file opened, perform a search for the useSecurity string. This can be done in VIM by pressing ESC and then entering /useSecurity.
+
+The line you are looking for should resemble the following.
+
+<useSecurity>true</useSecurity>
+Press i to enter VIM’s insert mode. Modify the value between the <useSecurity> tags and set the value to false.
+
+<useSecurity>false</useSecurity>
+Save your changes and then exit the text editor. If you are using VIM, press ESC and then enter wq!
